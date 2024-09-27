@@ -27,23 +27,27 @@ Install the required dependencies:
 bash
 
 pip install -r requirements.txt
-Set up your Groq API key by exporting it as an environment variable:
+
+## Set up your Groq API key by exporting it as an environment variable:
 
 bash
 
 export GROQ_API_KEY='your-groq-api-key'
-Usage:
+## Usage:
+
 Run the API server:
 
 bash
 
 python app.py
+This will start the Flask development server. You can access the API endpoint by visiting `http://localhost
 Submit customer reviews for analysis: You can use curl to send a file for analysis:
 
 bash
 
 curl -X POST -F "file=@path_to_file/customer_reviews.xlsx" http://127.0.0.1:5000/analyze
-Response format: The API will return a JSON response like:
+
+The API will return a JSON response with the sentiment analysis results:
 
 json
 
@@ -52,21 +56,24 @@ json
     "negative": 23,
     "neutral": 0
 }
+
 API Endpoint:
 /analyze (POST)
 Accepts .xlsx or .csv files containing customer reviews.
 Returns a JSON object with the sentiment analysis results.
-Example:
+## Example:
 Submit a .xlsx file containing 50 customer reviews:
 
 bash
 
 curl -X POST -F "file=@customer_reviews.xlsx" http://127.0.0.1:5000/analyze
-Limitations:
+
+## Limitations:
 Sentiment classification accuracy depends on the Groq LLM.
 Does not handle multilingual input.
 Large files may take longer to process.
-Improvements:
+
+## Improvements:
 Add support for multilingual sentiment analysis.
 Optimize file processing for larger datasets.
 Provide more granular sentiment scores.
