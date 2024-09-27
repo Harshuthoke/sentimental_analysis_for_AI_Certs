@@ -34,48 +34,50 @@ This project develops a Python-based API that processes customer reviews from XL
     ```bash
 
     export GROQ_API_KEY='your-groq-api-key'
-    
+
 ## Usage:
 
-Run the API server:
+1. Run the API server:
 
-```bash
+    ```bash
 
-python app.py
-This will start the Flask development server. You can access the API endpoint by visiting `http://localhost
-Submit customer reviews for analysis: You can use curl to send a file for analysis:
+    python app.py
 
-```bash
 
-curl -X POST -F "file=@path_to_file/customer_reviews.xlsx" http://127.0.0.1:5000/analyze
+2. Submit customer reviews for analysis: You can use curl to send a file for analysis:
 
-The API will return a JSON response with the sentiment analysis results:
+    ```bash
 
-json
+    curl -X POST -F "file=@path_to_file/customer_reviews.xlsx" http://127.0.0.1:5000/analyze
 
-{
-    "positive": 28,
-    "negative": 23,
-    "neutral": 0
-}
+3. The API will return a JSON response with the sentiment analysis results:
 
-API Endpoint:
-/analyze (POST)
-Accepts .xlsx or .csv files containing customer reviews.
-Returns a JSON object with the sentiment analysis results.
+    json
+
+    {
+        "positive": 28,
+        "negative": 23,
+        "neutral": 0
+    }
+
+    API Endpoint:
+    /analyze (POST)
+    Accepts .xlsx or .csv files containing customer reviews.
+    Returns a JSON object with the sentiment analysis results.
+
 ## Example:
-Submit a .xlsx file containing 50 customer reviews:
+1. Submit a .xlsx file containing 50 customer reviews:
 
-bash
+    ```bash
 
-curl -X POST -F "file=@customer_reviews.xlsx" http://127.0.0.1:5000/analyze
+    curl -X POST -F "file=@customer_reviews.xlsx" http://127.0.0.1:5000/analyze
 
 ## Limitations:
-Sentiment classification accuracy depends on the Groq LLM.
-Does not handle multilingual input.
-Large files may take longer to process.
+- Sentiment classification accuracy depends on the Groq LLM.
+- Does not handle multilingual input.
+- Large files may take longer to process.
 
 ## Improvements:
-Add support for multilingual sentiment analysis.
-Optimize file processing for larger datasets.
-Provide more granular sentiment scores.
+- Add support for multilingual sentiment analysis.
+- Optimize file processing for larger datasets.
+- Provide more granular sentiment scores.
