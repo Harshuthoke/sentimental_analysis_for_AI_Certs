@@ -23,17 +23,18 @@ This project develops a Python-based API that processes customer reviews from XL
    git clone <repo-url>
    cd <project-directory>
    
-Install the required dependencies:
+2. Install the required dependencies:
 
-```bash
+    ```bash
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
-Set up your Groq API key by exporting it as an environment variable:
+3. Set up your Groq API key by exporting it as an environment variable:
 
-```bash
+    ```bash
 
-export GROQ_API_KEY='your-groq-api-key'
+    export GROQ_API_KEY='your-groq-api-key'
+    
 ## Usage:
 
 Run the API server:
