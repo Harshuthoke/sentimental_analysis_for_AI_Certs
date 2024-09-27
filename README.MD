@@ -25,28 +25,28 @@ This project develops a Python-based API that processes customer reviews from XL
 Install the required dependencies:
 
 bash
-Copy code
+
 pip install -r requirements.txt
 Set up your Groq API key by exporting it as an environment variable:
 
 bash
-Copy code
+
 export GROQ_API_KEY='your-groq-api-key'
 Usage:
 Run the API server:
 
 bash
-Copy code
+
 python app.py
 Submit customer reviews for analysis: You can use curl to send a file for analysis:
 
 bash
-Copy code
+
 curl -X POST -F "file=@path_to_file/customer_reviews.xlsx" http://127.0.0.1:5000/analyze
 Response format: The API will return a JSON response like:
 
 json
-Copy code
+
 {
     "positive": 28,
     "negative": 23,
@@ -60,7 +60,7 @@ Example:
 Submit a .xlsx file containing 50 customer reviews:
 
 bash
-Copy code
+
 curl -X POST -F "file=@customer_reviews.xlsx" http://127.0.0.1:5000/analyze
 Limitations:
 Sentiment classification accuracy depends on the Groq LLM.
