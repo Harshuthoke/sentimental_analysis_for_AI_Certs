@@ -24,26 +24,26 @@ This project develops a Python-based API that processes customer reviews from XL
    cd <project-directory>
 Install the required dependencies:
 
-bash
+```bash
 
 pip install -r requirements.txt
 
 ## Set up your Groq API key by exporting it as an environment variable:
 
-bash
+```bash
 
 export GROQ_API_KEY='your-groq-api-key'
 ## Usage:
 
 Run the API server:
 
-bash
+```bash
 
 python app.py
 This will start the Flask development server. You can access the API endpoint by visiting `http://localhost
 Submit customer reviews for analysis: You can use curl to send a file for analysis:
 
-bash
+```bash
 
 curl -X POST -F "file=@path_to_file/customer_reviews.xlsx" http://127.0.0.1:5000/analyze
 
@@ -64,7 +64,7 @@ Returns a JSON object with the sentiment analysis results.
 ## Example:
 Submit a .xlsx file containing 50 customer reviews:
 
-bash
+```bash
 
 curl -X POST -F "file=@customer_reviews.xlsx" http://127.0.0.1:5000/analyze
 
